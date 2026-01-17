@@ -1,35 +1,51 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useThemeColor } from '@/hooks/use-theme-color';
+
+import IC_BAR_CHART from '@/assets/icons/ic_bar_chart.svg';
+import IC_CIRCLE_CHART from '@/assets/icons/ic_circle_chart.svg';
+import IC_HOME from '@/assets/icons/ic_home.svg';
+import IC_STONK from '@/assets/icons/ic_stonk.svg';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    const bgActionPrimary = useThemeColor({}, 'bgActionPrimary');
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs
+            screenOptions={{
+                tabBarActiveTintColor: bgActionPrimary,
+                headerShown: false,
+            }}
+        >
+            <Tabs.Screen
+                name="home"
+                options={{
+                    title: 'Home',
+                    tabBarIcon: ({ color }) => <IC_HOME style={{ color }} />,
+                }}
+            />
+            <Tabs.Screen
+                name="plans"
+                options={{
+                    title: 'Plans',
+                    tabBarIcon: ({ color }) => <IC_CIRCLE_CHART style={{ color }} />,
+                }}
+            />
+            <Tabs.Screen
+                name="stats"
+                options={{
+                    title: 'Stats',
+                    tabBarIcon: ({ color }) => <IC_BAR_CHART style={{ color }} />,
+                }}
+            />
+            <Tabs.Screen
+                name="income"
+                options={{
+                    title: 'Income',
+                    tabBarIcon: ({ color }) => <IC_STONK style={{ color }} />,
+                }}
+            />
+        </Tabs>
+    );
 }

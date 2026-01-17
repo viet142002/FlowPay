@@ -10,12 +10,31 @@ const tintColorDark = '#fff';
 
 export const Colors = {
   light: {
+    // Common
     text: '#11181C',
     background: '#fff',
     tint: tintColorLight,
     icon: '#687076',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
+
+    // Text Colors
+    textTitle: '#0F172B',
+    textSubtitle: '#62748E',
+    textParagraph: '#45556C',
+    textInverse: '#FFFFFF',
+    textMute: '#90A1B9',
+    textAction: '#155DFC',
+
+    // Background Colors
+    bgBase: '#F7F9FB',
+    bgPrimary: '#FFFFFF',
+    bgSecondary: '#009439',
+    bgActionPrimary: '#155DFC',
+    bgActiveUnit: '#F0FDF4',
+    bgActionSecondary: '#0F172B',
+    bgProgressWithinBudget: '#8B5CF6',
+    bgProgressOverBudget: '#E7000B'
   },
   dark: {
     text: '#ECEDEE',
@@ -24,6 +43,24 @@ export const Colors = {
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
+
+    // Text Colors
+    textTitle: '#0F172B',
+    textSubtitle: '#62748E',
+    textParagraph: '#45556C',
+    textInverse: '#FFFFFF',
+    textMute: '#90A1B9',
+    textAction: '#155DFC',
+
+    // Background Colors
+    bgBase: '#F7F9FB',
+    bgPrimary: '#FFFFFF',
+    bgSecondary: '#009439',
+    bgActionPrimary: '#155DFC',
+    bgActiveUnit: '#F0FDF4',
+    bgActionSecondary: '#0F172B',
+    bgProgressWithinBudget: '#8B5CF6',
+    bgProgressOverBudget: '#E7000B'
   },
 };
 
