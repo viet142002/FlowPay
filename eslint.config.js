@@ -8,16 +8,30 @@ module.exports = defineConfig([
     eslintPluginPrettierRecommended,
     {
         ignores: ['dist/*'],
+        extends: [
+            'eslint:recommended',
+            'plugin:@typescript-eslint/recommended',
+            'prettier',
+        ],
         rules: {
+            'no-unreachable': 'warn',
+            'no-unused-vars': 'warn',
+            '@typescript-eslint/no-unused-vars': 'warn',
             'prettier/prettier': [
-                'error',
+                'warn',
                 {
                     tabWidth: 4,
-                    printWidth: 100,
                     singleQuote: true,
                     semi: true,
                     endOfLine: 'auto',
                     bracketSameLine: false,
+                },
+                {
+                    usePrettierrc: true,
+                    // CHỈ fix lỗi có thể fix được
+                    fileInfoOptions: {
+                        withNodeModules: false,
+                    },
                 },
             ],
         },
